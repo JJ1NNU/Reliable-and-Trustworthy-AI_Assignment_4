@@ -1,0 +1,13 @@
+name: alpha-beta-crown
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.15
+  - pip
+  - pip:
+    - --index-url https://download.pytorch.org/whl/cu126
+    - torch==2.11.0
+    - torchvision
+    - tqdm
+    - pandas
