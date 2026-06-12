@@ -1,0 +1,28 @@
+general:
+  device: cuda
+  enable_incomplete_verification: True
+
+model:
+  name: SmallCNN
+  path: ./models/small_cnn.pth
+  custom_model_file: ../test.py
+
+data:
+  dataset: MNIST
+  start: 0
+  end: 1
+  std: [0.3081]
+  mean: [0.1307]
+
+specification:
+  epsilon: 0.001
+  norm: .inf
+
+solver:
+  batch_size: 1
+  bound_prop_method: alpha-crown
+
+bab:
+  timeout: 180
+  branching:
+    method: kfsb
